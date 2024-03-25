@@ -25,6 +25,19 @@
             
         }
     </style>
-    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const valorProduto = urlParams.get('valor');
+        
+                if (valorProduto !== null) {
+                    document.getElementById('valor-produto').textContent = Valor do produto: R$  ${parseFloat(valorProduto).toFixed(2)};
+                } else {
+                    document.getElementById('valor-produto').textContent = 'Valor do Produto não encontrado.';
+                }
+            });
+          </script>
+
+
 </body>
 </html>

@@ -192,6 +192,7 @@ BUTTON {
 }
 
 
+
 #mercadinho img{
     margin: auto;
     width: 100%;
@@ -206,18 +207,52 @@ BUTTON {
 
 #materiais{
 
+
 }
-.produto{
-    display: flex;
+@media (max-width: 800px) {
+    ul li {
+      display: block !important;
+    }
+}
+
+#produtos{
+    display: flex; 
     justify-content: space-between;
     margin: auto;
+
+}
+.produto{
+    text-align: center;
+    margin-bottom: 20px;
     background-color: #92DAFD;
     list-style: none;
     width: 200px;
-    height: 200px;
-    border-radius: 16px
-    
+    height: 350px;
+    border-radius: 16px 
 }
+
+.produto img{
+    height: 180px;
+}
+
+.produto h2{
+    font-size: 20px;
+}
+
+h3{
+    font-family: "Fredoka", serif;
+    font-weight: 600px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.produto button{
+    padding: 10px 60px;
+}
+
+
 
 #projeto{
     text-align: center;
