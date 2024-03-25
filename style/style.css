@@ -219,11 +219,6 @@ BUTTON {
     
 }
 
-
-
-
-
-
 #projeto{
     text-align: center;
     margin: auto;
@@ -248,9 +243,34 @@ BUTTON {
     height: 100%;
 
 }
+@media (max-width: 800px) {
+    ul li {
+      display: block !important;
+    }
+  }
+.parceiro{
+    width: 90%;
+    border-radius: 100%;
+    border: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
+}
 
+#parceiros ul{
+    display: flex;
+    list-style: none;
+    margin: auto;
+    justify-content: space-between;
+}
 
+#parceiros button{
+    margin-bottom: 20px;
+
+}
+#parceiros{
+    text-align: center;
+}
 
 footer{
     display: flex;
