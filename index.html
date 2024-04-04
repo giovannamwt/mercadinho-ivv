@@ -46,7 +46,8 @@
                 Conheça O Instituto Vida Videira Reforma
             </h1>
             <img src="/images/obra.png" alt="foto da obra" id="foto1">
-            <p>Faça parte dessa causa e ajude-nos a trazer para as famílias em vulnerabilidade da Sapiranga e adjacências a oportunidade de ter acesso a um Mercadinho.<br><br>Somos um Instituto em expansão no Reino que precisa da construir um novo Mercadinho Solidário. Estamos buscando ajuda e doações de acordo com uma lista de materiais para que possamos continuar a fazer a diferença  na vida de milhares de pessoas. Contamos com a sua ajuda para alcançar nosso objetivo.</p>
+            <p>Faça parte dessa causa e ajude-nos a trazer para as famílias em vulnerabilidade da Sapiranga e adjacências a oportunidade de ter acesso a um Mercadinho.
+            <br> Somos um Instituto em expansão no Reino que precisa construir um novo Mercadinho Solidário. Estamos buscando ajuda e doações de acordo com uma lista de materiais para que possamos continuar a fazer a diferença  na vida de milhares de pessoas. Contamos com a sua ajuda para alcançar nosso objetivo.</p>
         </div>  
 
         <div id="doe">
@@ -394,7 +395,7 @@
                 for (let i = 0; i < btnDoarArray.length; i++) {
                     btnDoarArray[i].addEventListener('click', function() {
                         const valorProduto = parseFloat(document.querySelectorAll('.valor-unitario')[i].textContent.replace('R$', '').replace(',', '.'));
-                        window.location.href = qrcode.html?valor=$:{valorProduto};
+                        window.location.href = `qrcode.html?valor=${valorProduto}`;
                     });
                 }
             });
