@@ -1,9 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-@media (max-width: 860px) {
-    ul li {
-      display: block !important;
+@media (max-width: 995px) {
+    body{
+        --font1: 30px;
+        --font2: 20px;
+        --fontnav: 15px;
+        --margin-top: 15%;
+        --height: 300px;
     }
+    ul li {
+      /* display: block !important; */
+      flex-direction: column;
+      align-items: center;
+    }
+    .nav-item BUTTON{
+        --fontbutton: 15px;
+    }
+    #itens-mercado{
+        display: flex;
+        justify-content: space-around;
+    }
+    .navbar{
+        flex-wrap: nowrap;
+        
+    }
+    footer{
+        flex-direction: column;
+        --fontfooter: 9px;
+        text-align: center;
+    }
+    #marcas{
+        flex-direction: column;
+    }
+    .parceiro{
+        width: 10%;
+    }
+
+    
   }
 
 :root{
@@ -13,6 +46,13 @@
     --azulescuro: #0059A0;
     --max : 1500px;
     --min: 320px;
+    --font1: 40px;
+    --font2: 20px;
+    --fontnav : 24px;
+    --fontbutton: 20px;
+    --margin-top: 8%;
+    --height: 450px;
+    --fontfooter: 18px;
   }
 
 *{
@@ -24,18 +64,16 @@
 
 body{
     background-color: var(--bege);
-    min-width: var(--min);
-    max-width: var(--max);
+    /* min-width: var(--min);
+    max-width: var(--max); */
     margin: auto;
     justify-content: center;
 }
 
 header{
-    min-width: var(--min);
-    max-width: var(--max);
-    margin: auto;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    margin: auto;
 
 }
 
@@ -43,52 +81,63 @@ header{
     width: 60%;
 }
 
-.nav-bar{
-    
+.navbar{
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     position: fixed;
     background-color: var(--bege);
-    min-width: var(--min);
-    max-width: var(--max);
-    width: 100%;
     padding: 1%;  
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    
 } 
 
 .nav-list ul{
     list-style: none;
     display: flex;
     align-items: center;
+    flex-direction: row;
+    margin-bottom: 0;
+    
     
 }
 
 .nav-list li{
-    margin: 0px 20px 0 0 ;
+    margin: auto ;
 }
 
 .nav-link{
     font-family: "Fredoka", sans-serif;
     font-weight: 600px;
     text-decoration: none;
-    font-size: 24px;
+    font-size: var(--fontnav);
     color: black;
+    text-wrap: nowrap;
 }
 
+main{
+    padding-top: 2%;
+ }
+
+#btn1{
+    text-wrap: nowrap;
+}
 #cta1{    
-    background-image: url(/images/bg1.png);
+    background-image: url("/images/bg1sm.webp");
     background-size: cover;
     background-repeat: no-repeat;
-    align-content: center;
+    display: flex;
     padding: 5%;
-    min-width: var(--min);
+    margin-top: var(--margin-top);
 }
     
 #box1{
-    padding: 30px 50px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 3%; */
+    padding: 6%;
     min-width: 290px;
     max-width: 50%;
     margin: auto;
@@ -103,16 +152,18 @@ backdrop-filter: blur(20.3px);
 #box1 h1{
     font-family: "Fredoka", serif;
     font-weight: 600;
-    font-size: 40px;
+    font-size: var(--font1);
     color: var(--laranja);
+    margin: 0;
 }
 
 h2{
     font-family: "Fredoka", sans-serif;
     font-weight: 400;
-    font-size: 30px;
+    font-size: var(--font2);
     color: var(--azulescuro);
-    margin: 10px;
+    text-align: center;
+    
 }
 
 BUTTON {
@@ -120,7 +171,7 @@ BUTTON {
     background: var(--laranja);
     border-radius: 100px;
     color: #FFFFFF;
-    font-size: 20px;
+    font-size: var(--fontbutton);
     font-weight: 100;
     padding: 20px 30px;
     text-decoration: none;
@@ -139,14 +190,10 @@ BUTTON:hover {
 
  }
 
- main{
-    padding: 2%;
- }
-
  main h1{
     font-family: "Fredoka", serif;
     font-weight: 600;
-    font-size: 40px;
+    font-size: var(--font1);
     text-align: center;
     color: var(--azulescuro);
     margin: 30px 0;
@@ -205,7 +252,7 @@ ul{
 .topico h1{
     font-family: "Fredoka", serif;
     font-weight: 600;
-    font-size: 40px;
+    font-size: var(--font1);
     font-style: normal;
     color: #FE8B51;;
 }
@@ -256,12 +303,22 @@ h3{
     padding: 10px 60px;
 }
 
+/* .valor-unitario{
+    background-color: #FFFFFF;
+}
+
+.valor-unitario button{
+border-radius: 5px;
+padding:1px 15px;
+margin: 0 15px;
+} */
+
+
 .slider {
     display: block;
     height: 60%;
     width: 60%;
     margin: auto;
-    margin-top: 20px;
     position: relative;
     min-width: 350px;
    
@@ -328,55 +385,58 @@ h3{
 #projeto{
     text-align: center;
     margin: auto;
-    height: 500px;
+    height: var(--height);
 }
 
 #projeto h2{
     margin-bottom: 20px;
 }
 
-
-
 .parceiro{
     width: 90%;
     border-radius: 100%;
     border: 20px;
-    margin: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
 }
-
+#marcas{
+    display: flex;
+}
 #parceiros ul{
     display: flex;
     list-style: none;
-    margin: auto;
+    margin: auto auto 50px auto ;
     justify-content: space-between;
 }
 
-#parceiros button{
-    margin-bottom: 20px;
-
+#parceiros a{
+    margin-bottom: 50px;
 }
 #parceiros{
-    text-align: center;
-    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
 }
+
 
 footer{
     display: flex;
     justify-content: space-between;
-    margin: 20px 0px ;
 } 
 
 footer ul{
-    list-style: none;   
+    list-style: none;  
+    display: flex; 
+    flex-direction: column;
 }
 
 footer li{
     font-family: "Zilla Slab", serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: var(--fontfooter);
     text-decoration: none;
     color: black;
     margin: 10px 10px;
+    
 }
