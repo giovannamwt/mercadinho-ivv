@@ -3,41 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Doação</title>
-</head>
-<body>
-    <img src="/images/QR Code.png" alt="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap">
     <style>
-        body{
-            background-color: #D9F2FF;
+        body {
+            background-color: #FCF6EE; 
+            font-family: 'Open Sans', sans-serif; 
+            color: #0059A0; 
+            margin: 0;
+            padding: 0;
         }
-        img{
+        .container {
+            max-width: 600px;
             margin: auto;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            max-width: 1400px;
-            display: flex; 
-            justify-content: center;
-            border-radius: 5px;
+            padding: 20px;
+            border-radius: 16px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            
+            background-color: #FFF;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        img {
+            max-width: 70%;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            align-self: center;
+        }
+        #produto-info, #valor-produto {
+            font-family: 'Fredoka', sans-serif; 
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        #produto-info {
+            color: #FE8B51; 
+        }
+        #valor-produto {
+            color: #0059A0; 
         }
     </style>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const valorProduto = urlParams.get('valor');
-        
-                if (valorProduto !== null) {
-                    document.getElementById('valor-produto').textContent = `Valor do Produto: R$ ${parseFloat(valorProduto).toFixed(2)}`;
-                } else {
-                    document.getElementById('valor-produto').textContent = 'Valor do Produto não encontrado.';
-                }
-            });
-          </script>
+</head>
+<body>
+    <div class="container">
+        <img src="/images/QR Code.png" alt="QR Code">
+        <div id="produto-info"></div>
+        <div id="valor-produto"></div>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const valorProduto = urlParams.get('valor');
+            const produtoNome = urlParams.get('produto');
+            const quantidadeProduto = urlParams.get('quantidade');
 
+            if (valorProduto !== null) {
+                document.getElementById('valor-produto').textContent = `Valor do Produto: R$ ${parseFloat(valorProduto).toFixed(2)}`;
+            } else {
+                document.getElementById('valor-produto').textContent = 'Somos gratos por sua doação.';
+            }
+
+            if (produtoNome !== null && quantidadeProduto !== null) {
+                document.getElementById('produto-info').textContent = `Produto: ${produtoNome}, Quantidade: ${quantidadeProduto}`;
+            } else {
+                document.getElementById('produto-info').textContent = 'Você está sendo agente de mudança em vidas.';
+            }
+        });
+    </script>
 </body>
 </html>
